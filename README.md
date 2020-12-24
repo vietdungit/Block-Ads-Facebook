@@ -1,9 +1,9 @@
-# Trình chặn quảng cáo facebook
+# Trình chặn quảng cáo trên bảng tin Facebook
 
-- đơn giản chỉ là việc xoá những bài viết có quảng cáo [|Được tài trợ]()
+- đơn giản chỉ là việc xoá những bài viết có quảng cáo [Được tài trợ]
 - Cũng có thể thay thế vị trí bài viết đó bằng những gì bạn muốn
 
-### Extension cần những gì ?
+### Extension có những gì ?
 - 1 File manifest.json để khai báo, 1 File content.js để thực hiện  xoá bài viết có quảng cáo
 - Chúng ta khai báo những gì trong manifest.json
 ```sh
@@ -22,9 +22,9 @@
 ```
 
 ```sh
-giải thích một chút về khai báo content_scripts
+Giải thích một chút về khai báo content_scripts
 - matches : khai báo url mà file content.js có thể hoạt động
-- js : khai báo file content.js :)
+- js : khai báo file content.js
 ```
 
 ```sh
@@ -33,7 +33,7 @@ giải thích một chút về khai báo content_scripts
 - tìm những bài viết có nội dung quảng cáo [Được tài trợ]
 - Xoá những bài viết đó
 ```
-- trong file content.js có những gì
+- Trong file content.js có gì?
 ```sh
 window.onscroll = function (e) {
 // called when the window is scrolled.
@@ -47,7 +47,7 @@ window.onscroll = function (e) {
 ```
 
 ```sh
-#giải thích 1 chút về file content.js
+Giải thích 1 chút về file content.js
 let elements = document.querySelectorAll("[data-pagelet='FeedUnit_{n}']"); // tìm ra tất cả các bài viết
 elements.forEach(function (ele, i) {... // vòng lặp để  duyệt qua các bài viết
     if (elements[i].innerHTML.indexOf("Được tài trợ") !== -1) {... // tìm bài viết chứa quảng cáo
